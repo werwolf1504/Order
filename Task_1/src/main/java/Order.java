@@ -51,7 +51,7 @@ public class Order {
         MainCourse mc = null;
         System.out.println("what main course do you want?");
 
-        Cuisines c = chooseCuisines();
+        Cuisines c = cuisines.get(index);
         List<Dish> menu = c.getMenu();
         for (int i = 0; i < menu.size(); i++) {
             if (menu.get(i) instanceof MainCourse){
@@ -72,6 +72,7 @@ public class Order {
             }
         }
 
+        System.out.println("Main Course was chosen");
         return mc;
     }
 
@@ -79,7 +80,7 @@ public class Order {
         Dessert d = null;
         System.out.println("what dessert do you want?");
 
-        Cuisines c = chooseCuisines();
+        Cuisines c = cuisines.get(index);
         List<Dish> menu = c.getMenu();
         for (int i = 0; i < menu.size(); i++) {
             if (menu.get(i) instanceof Dessert){
@@ -100,6 +101,7 @@ public class Order {
             }
         }
 
+        System.out.println("Dessert was chosen");
         return d;
     }
 
@@ -107,7 +109,7 @@ public class Order {
         Drink d = null;
         System.out.println("what drink do you want?");
 
-        Cuisines c = chooseCuisines();
+        Cuisines c = cuisines.get(index);
         List<Drink> menu = c.getDrinkMenu();
         for (int i = 0; i < menu.size(); i++) {
             System.out.println(menu.get(i).getName());
@@ -126,6 +128,7 @@ public class Order {
             }
         }
 
+        System.out.println("Drink was chosen");
         return d;
     }
 
@@ -134,17 +137,17 @@ public class Order {
     }
 
     public Order makeOrder(){
-        Lunch l = makeLunch();
-        Drink d = null;
+        chooseCuisines();
+        lunch = makeLunch();
 
         String choose = "";
+        System.out.println("Do you want drink? (Please, choose Yes or No)");
         try {
             choose = reader.readLine();
         } catch (IOException e) {
             e.printStackTrace();
         }
 
-        System.out.println("Do you want drink? (Please, choose Yes or No)");
 
         if (choose.equals("Yes")){
             drink = chooseDrink();
@@ -158,23 +161,40 @@ public class Order {
             }
 
             if (choose.equals("all")){
-                d.setIce(true);
-                d.setLemon(true);
+                drink.setIce(true);
+                drink.setLemon(true);
             }
             if (choose.equals("ice")){
-                d.setIce(true);
+                drink.setIce(true);
             }
             if (choose.equals("lemon")){
-                d.setLemon(true);
+                drink.setLemon(true);
             }
+
+            System.out.println("Order was made");
 
         }
 
-        return new Order(l, d);
+        return new Order(lunch, drink);
     }
 
-    public Order(Lunch lunch, Drink drink) {
+    private Order(Lunch lunch, Drink drink) {
         this.lunch = lunch;
         this.drink = drink;
+    }
+
+    public Order(){}
+
+    @Override
+    public String toString() {
+        String text = "You ordered: " + cuisines.get(index).toString() + ", ";
+
+        if (drink != null) {
+            text = text + lunch.toString() + drink.toString();
+        }else {
+            text = text + lunch.toString();
+        }
+
+        return text;
     }
 }

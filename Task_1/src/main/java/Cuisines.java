@@ -87,4 +87,9 @@ public class Cuisines {
 
         return new Cuisines("Mexican", mexican, drinks);
     }
+
+    @Override
+    public String toString() {
+        return name + " cuisines";
+    }
 }

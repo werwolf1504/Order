@@ -8,4 +8,9 @@ public class MainCourse extends Dish{
     public boolean isMainCourse() {
         return isMainCourse;
     }
+
+    @Override
+    public String toString() {
+        return getName() + " as Main Course, ";
+    }
 }

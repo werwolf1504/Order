@@ -6,4 +6,9 @@ public class Lunch {
         this.mainCourse = mainCourse;
         this.dessert = dessert;
     }
+
+    @Override
+    public String toString() {
+        return mainCourse.toString() + dessert.toString();
+    }
 }
