@@ -17,4 +17,13 @@ public abstract class Dish {
     public void setPrice(float price) {
         this.price = price;
     }
+
+    public Dish(){
+
+    }
+
+    public Dish(String name, float price){
+        this.name = name;
+        this.price = price;
+    }
 }

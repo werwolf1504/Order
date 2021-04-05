@@ -4,4 +4,13 @@ public class Dessert extends Dish{
     public boolean isDessert() {
         return isDessert;
     }
+
+    public Dessert(String name, float price) {
+        super(name, price);
+    }
+
+    @Override
+    public String toString() {
+        return getName() + " as Dessert, ";
+    }
 }
