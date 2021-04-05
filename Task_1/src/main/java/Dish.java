@@ -1,6 +1,6 @@
 public abstract class Dish {
     private String name;
-    private float price;
+    private int price;
 
     public String getName() {
         return name;
@@ -10,11 +10,11 @@ public abstract class Dish {
         this.name = name;
     }
 
-    public float getPrice() {
+    public int getPrice() {
         return price;
     }
 
-    public void setPrice(float price) {
+    public void setPrice(int price) {
         this.price = price;
     }
 
@@ -22,7 +22,7 @@ public abstract class Dish {
 
     }
 
-    public Dish(String name, float price){
+    public Dish(String name, int price){
         this.name = name;
         this.price = price;
     }

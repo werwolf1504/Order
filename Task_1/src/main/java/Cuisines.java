@@ -44,9 +44,9 @@ public class Cuisines {
         List<Dish> polish = new ArrayList<Dish>(5);
         polish.add(new MainCourse("Bigos", 10));
         polish.add(new MainCourse("Borch", 12));
-        polish.add(new MainCourse("Meat with patato", 15.5F));
+        polish.add(new MainCourse("Meat with patato", 15));
         polish.add(new Dessert("PinaColada",8));
-        polish.add(new Dessert("Honny cook",7.5F));
+        polish.add(new Dessert("Honny cook",7));
 
         List<Drink> drinks = new ArrayList<Drink>(3);
         drinks.add(new Drink("Sprit", 4));
@@ -60,9 +60,9 @@ public class Cuisines {
         List<Dish> italian = new ArrayList<Dish>(5);
         italian.add(new MainCourse("Carbonara", 14));
         italian.add(new MainCourse("Pizza", 17));
-        italian.add(new MainCourse("Bolonesa", 14F));
+        italian.add(new MainCourse("Bolonesa", 14));
         italian.add(new Dessert("PinaColada",8));
-        italian.add(new Dessert("Gofra",5F));
+        italian.add(new Dessert("Gofra",5));
 
         List<Drink> drinks = new ArrayList<Drink>(3);
         drinks.add(new Drink("Wine White", 5));

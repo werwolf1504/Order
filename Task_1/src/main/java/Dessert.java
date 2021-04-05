@@ -5,7 +5,7 @@ public class Dessert extends Dish{
         return isDessert;
     }
 
-    public Dessert(String name, float price) {
+    public Dessert(String name, int price) {
         super(name, price);
     }
 

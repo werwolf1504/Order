@@ -178,7 +178,7 @@ public class Order {
         return new Order(lunch, drink);
     }
 
-    private Order(Lunch lunch, Drink drink) {
+    public Order(Lunch lunch, Drink drink) {
         this.lunch = lunch;
         this.drink = drink;
     }

@@ -1,7 +1,7 @@
 public class MainCourse extends Dish{
     private boolean isMainCourse = true;
 
-    public MainCourse(String name, float price) {
+    public MainCourse(String name, int price) {
         super(name, price);
     }
 

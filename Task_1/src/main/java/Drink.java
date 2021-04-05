@@ -1,5 +1,5 @@
 public class Drink extends Dish{
-    public Drink(String name, float price) {
+    public Drink(String name, int price) {
         super(name, price);
     }
 
